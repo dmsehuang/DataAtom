@@ -14,6 +14,11 @@
 		FE478CA41AD0ADD300926C93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE478CA31AD0ADD300926C93 /* Images.xcassets */; };
 		FE478CA71AD0ADD300926C93 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE478CA51AD0ADD300926C93 /* LaunchScreen.xib */; };
 		FE478CB31AD0ADD300926C93 /* DataAtomsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE478CB21AD0ADD300926C93 /* DataAtomsTests.m */; };
+		FE478CC71AD10DB700926C93 /* PDFModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE478CC61AD10DB700926C93 /* PDFModelController.m */; };
+		FEBE33B31AD1A716008BB875 /* PDFScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBE33B21AD1A716008BB875 /* PDFScrollViewController.m */; };
+		FEBE33B51AD1F145008BB875 /* pulp_fiction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEBE33B41AD1F145008BB875 /* pulp_fiction.jpg */; };
+		FEBE33B71AD1F188008BB875 /* jack-ma.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FEBE33B61AD1F188008BB875 /* jack-ma.pdf */; };
+		FEBE33BA1AD1FA2A008BB875 /* PDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBE33B91AD1FA2A008BB875 /* PDFView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,14 @@
 		FE478CAC1AD0ADD300926C93 /* DataAtomsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataAtomsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE478CB11AD0ADD300926C93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE478CB21AD0ADD300926C93 /* DataAtomsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataAtomsTests.m; sourceTree = "<group>"; };
+		FE478CC51AD10DB700926C93 /* PDFModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFModelController.h; sourceTree = "<group>"; };
+		FE478CC61AD10DB700926C93 /* PDFModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFModelController.m; sourceTree = "<group>"; };
+		FEBE33B11AD1A716008BB875 /* PDFScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFScrollViewController.h; sourceTree = "<group>"; };
+		FEBE33B21AD1A716008BB875 /* PDFScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFScrollViewController.m; sourceTree = "<group>"; };
+		FEBE33B41AD1F145008BB875 /* pulp_fiction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pulp_fiction.jpg; path = ../../../Photos/wallpaper/pulp_fiction.jpg; sourceTree = "<group>"; };
+		FEBE33B61AD1F188008BB875 /* jack-ma.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "jack-ma.pdf"; path = "../../../../Desktop/jack-ma.pdf"; sourceTree = "<group>"; };
+		FEBE33B81AD1FA2A008BB875 /* PDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFView.h; sourceTree = "<group>"; };
+		FEBE33B91AD1FA2A008BB875 /* PDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +94,19 @@
 		FE478C951AD0ADD300926C93 /* DataAtoms */ = {
 			isa = PBXGroup;
 			children = (
+				FEBE33B61AD1F188008BB875 /* jack-ma.pdf */,
+				FEBE33B41AD1F145008BB875 /* pulp_fiction.jpg */,
 				FE478C9A1AD0ADD300926C93 /* AppDelegate.h */,
 				FE478C9B1AD0ADD300926C93 /* AppDelegate.m */,
 				FE478C9D1AD0ADD300926C93 /* ViewController.h */,
 				FE478C9E1AD0ADD300926C93 /* ViewController.m */,
 				FE478CA01AD0ADD300926C93 /* Main.storyboard */,
+				FE478CC51AD10DB700926C93 /* PDFModelController.h */,
+				FE478CC61AD10DB700926C93 /* PDFModelController.m */,
+				FEBE33B11AD1A716008BB875 /* PDFScrollViewController.h */,
+				FEBE33B21AD1A716008BB875 /* PDFScrollViewController.m */,
+				FEBE33B81AD1FA2A008BB875 /* PDFView.h */,
+				FEBE33B91AD1FA2A008BB875 /* PDFView.m */,
 				FE478CA31AD0ADD300926C93 /* Images.xcassets */,
 				FE478CA51AD0ADD300926C93 /* LaunchScreen.xib */,
 				FE478C961AD0ADD300926C93 /* Supporting Files */,
@@ -201,7 +222,9 @@
 			files = (
 				FE478CA21AD0ADD300926C93 /* Main.storyboard in Resources */,
 				FE478CA71AD0ADD300926C93 /* LaunchScreen.xib in Resources */,
+				FEBE33B51AD1F145008BB875 /* pulp_fiction.jpg in Resources */,
 				FE478CA41AD0ADD300926C93 /* Images.xcassets in Resources */,
+				FEBE33B71AD1F188008BB875 /* jack-ma.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +243,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE478C9F1AD0ADD300926C93 /* ViewController.m in Sources */,
+				FEBE33BA1AD1FA2A008BB875 /* PDFView.m in Sources */,
 				FE478C9C1AD0ADD300926C93 /* AppDelegate.m in Sources */,
+				FEBE33B31AD1A716008BB875 /* PDFScrollViewController.m in Sources */,
+				FE478CC71AD10DB700926C93 /* PDFModelController.m in Sources */,
 				FE478C991AD0ADD300926C93 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +440,7 @@
 				FE478CB81AD0ADD300926C93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE478CB91AD0ADD300926C93 /* Build configuration list for PBXNativeTarget "DataAtomsTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +449,7 @@
 				FE478CBB1AD0ADD300926C93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
