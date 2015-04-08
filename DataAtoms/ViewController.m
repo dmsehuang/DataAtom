@@ -24,23 +24,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
     // init page view controller
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
+    self.pageViewController.dataSource = self.pdfModelController;
     
     // set the first page of page view controller
     PDFScrollViewController* pdfScrollViewController = [self.pdfModelController viewControllerAtIndex:0 storyboard:self.storyboard];
     NSArray *viewControllers = @[pdfScrollViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
-    self.pageViewController.dataSource = self.pdfModelController;
-    
     // add it to child view controller
     [self addChildViewController:self.pageViewController];
     
     // set the view of UIPageViewController and add it to subview
-    CGRect pageViewFrame = CGRectMake(0, 0, self.view.bounds.size.width/2, self.view.bounds.size.height);
+    CGRect pageViewFrame = CGRectMake(0, self.view.bounds.size.height/2,
+                                      self.view.bounds.size.width, self.view.bounds.size.height/2);
+    //CGRect pageViewFrame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     self.pageViewController.view.frame = pageViewFrame;
     [self.view addSubview:self.pageViewController.view];
     

@@ -22,6 +22,7 @@
 
 -(PDFScrollViewController *)viewControllerAtIndex:(NSInteger)index storyboard:(UIStoryboard *)storyboard {
     PDFScrollViewController* pdfScrollViewController = [storyboard instantiateViewControllerWithIdentifier:@"PDFScrollViewController"];
+    
     pdfScrollViewController.pageNumber = index + 1;
     pdfScrollViewController.pdfPage = CGPDFDocumentGetPage(self.pdf, index+1);
     pdfScrollViewController.view.layer.borderColor = [UIColor orangeColor].CGColor;

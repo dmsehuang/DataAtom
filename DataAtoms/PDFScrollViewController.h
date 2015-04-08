@@ -10,8 +10,9 @@
 
 @class PDFView;
 
-@interface PDFScrollViewController : UIViewController
+@interface PDFScrollViewController : UIViewController <UIScrollViewDelegate>
 
+@property (strong, nonatomic) UIScrollView* scrollView;
 @property (strong, nonatomic) PDFView* pdfView;
 
 @property (nonatomic) CGPDFPageRef pdfPage;

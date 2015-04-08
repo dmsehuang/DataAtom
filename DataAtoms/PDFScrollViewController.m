@@ -17,15 +17,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
-//    CGRect rect = CGRectMake(45, 45, 100, 100);
-//    UILabel* label = [[UILabel alloc] initWithFrame:rect];
-//    label.backgroundColor = [UIColor lightGrayColor];
-//    label.text = [NSString stringWithFormat:@"Page #%ld", (long)self.pageNumber];
-//    [self.view addSubview:label];
-    self.pdfView = [[PDFView alloc] initWithFrame:self.view.frame];
+    
+    // construct scroll view rect, add padding
+    CGFloat x0 = self.view.frame.origin.x;
+    CGFloat y0 = self.view.frame.origin.y;
+    CGFloat dx = 50;
+    CGFloat dy = 50;
+    //CGFloat dx = self.view.frame.size.width/10;
+    //CGFloat dy = self.view.frame.size.height/20;
+    CGFloat x1 = x0 + dx;
+    CGFloat y1 = y0 + dy;
+    CGFloat lenx = self.view.frame.size.width - 2*dx;
+    // hard code the height, half of the size. This is a bad code
+    CGFloat leny = self.view.frame.size.height/2 - 2*dy;
+    CGRect scrollRect = CGRectMake(x1, y1, lenx, leny);
+    
+    // init scroll view
+    self.scrollView = [[UIScrollView alloc] initWithFrame:scrollRect];
+    CGRect pageRect = CGPDFPageGetBoxRect(self.pdfPage, kCGPDFMediaBox);
+    self.scrollView.contentSize = pageRect.size;
+    self.scrollView.minimumZoomScale = 0.5;
+    self.scrollView.maximumZoomScale = 5.0;
+    self.scrollView.delegate = self;
+    
+    // add a view as a subview of scroll view
+    self.pdfView = [[PDFView alloc] initWithFrame:pageRect];
     self.pdfView.pdfPage = self.pdfPage;
-    [self.view addSubview:self.pdfView];
+    [self.scrollView addSubview:self.pdfView];
+    [self.view addSubview:self.scrollView];
+    //[self.view addSubview:self.pdfView];
+}
+
+// scroll view delegate
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return self.pdfView;
 }
 
 - (void)didReceiveMemoryWarning {
