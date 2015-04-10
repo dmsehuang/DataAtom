@@ -20,6 +20,15 @@
     
     // Do any additional setup after loading the view.
     
+    // construct uibutton
+    self.penButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.penButton addTarget:self
+                  action:@selector(penButtonClick)
+        forControlEvents:UIControlEventTouchUpInside];
+    [self.penButton setTitle:@"PEN" forState:UIControlStateNormal];
+    self.penButton.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, 45, 60);
+    [self.view addSubview:self.penButton];
+    
     // construct scroll view rect, add padding
     CGFloat x0 = self.view.frame.origin.x;
     CGFloat y0 = self.view.frame.origin.y;
@@ -48,6 +57,17 @@
     [self.scrollView addSubview:self.pdfView];
     [self.view addSubview:self.scrollView];
     //[self.view addSubview:self.pdfView];
+}
+
+-(void)penButtonClick {
+    if (!self.penButton.isSelected) {
+        [self.penButton setSelected:YES];
+        self.scrollView.scrollEnabled = NO;
+        
+    } else {
+        [self.penButton setSelected:NO];
+        self.scrollView.scrollEnabled = YES;
+    }
 }
 
 // scroll view delegate

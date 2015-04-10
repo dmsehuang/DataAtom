@@ -12,5 +12,7 @@
 
 @property (strong, nonatomic) UIPageViewController* pageViewController;
 
+@property (strong, nonatomic) UIButton* lockBtn;
+
 @end
 

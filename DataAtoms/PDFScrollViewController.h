@@ -12,6 +12,8 @@
 
 @interface PDFScrollViewController : UIViewController <UIScrollViewDelegate>
 
+@property (strong, nonatomic) UIButton* penButton;
+
 @property (strong, nonatomic) UIScrollView* scrollView;
 @property (strong, nonatomic) PDFView* pdfView;
 

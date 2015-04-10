@@ -47,6 +47,16 @@
     [self.view addSubview:self.pageViewController.view];
     
     //[self.pageViewController didMoveToParentViewController:self];
+    
+    
+    // construct uibutton
+    self.lockBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.lockBtn addTarget:self
+                       action:@selector(lockBtnClick)
+             forControlEvents:UIControlEventTouchUpInside];
+    [self.lockBtn setTitle:@"LOCK" forState:UIControlStateNormal];
+    self.lockBtn.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, 50, 80);
+    [self.view addSubview:self.lockBtn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,6 +70,21 @@
         _pdfModelController = [[PDFModelController alloc] init];
     }
     return _pdfModelController;
+}
+
+-(void)lockBtnClick {
+    // lock the page view controller
+    if (!self.lockBtn.isSelected) {
+        [self.lockBtn setSelected:YES];
+        for (UIGestureRecognizer* gestureRecognizer in self.pageViewController.gestureRecognizers) {
+            gestureRecognizer.enabled = NO;
+        }
+    } else {
+        [self.lockBtn setSelected:NO];
+        for (UIGestureRecognizer* gestureRecognizer in self.pageViewController.gestureRecognizers) {
+            gestureRecognizer.enabled = YES;
+        }
+    }
 }
 
 
